@@ -1,0 +1,135 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FanDAO Sports-themed Dark Design System */
+
+@layer base {
+  :root {
+    /* Stadium Dark Theme */
+    --background: 210 20% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 210 20% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 210 20% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Sports accent colors */
+    --primary: 142 86% 50%; /* Stadium green */
+    --primary-foreground: 210 20% 8%;
+
+    --secondary: 210 20% 16%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 210 20% 14%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 39 100% 50%; /* Stadium lights yellow */
+    --accent-foreground: 210 20% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 210 20% 20%;
+    --input: 210 20% 16%;
+    --ring: 142 86% 50%;
+
+    --radius: 0.75rem;
+
+    /* Sports-specific colors */
+    --stadium-green: 142 86% 50%;
+    --spotlight-yellow: 39 100% 50%;
+    --field-dark: 210 20% 8%;
+    --crowd-purple: 270 50% 50%;
+  }
+
+  .dark {
+    --background: 210 20% 8%;
+    --foreground: 0 0% 95%;
+    --card: 210 20% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 210 20% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 142 86% 50%;
+    --primary-foreground: 210 20% 8%;
+    --secondary: 210 20% 16%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 210 20% 14%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 39 100% 50%;
+    --accent-foreground: 210 20% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 210 20% 20%;
+    --input: 210 20% 16%;
+    --ring: 142 86% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(142, 202, 107, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);
+  }
+
+  /* Stadium-style background patterns */
+  .stadium-bg {
+    background-image: 
+      linear-gradient(135deg, transparent 25%, rgba(142, 202, 107, 0.05) 25%, rgba(142, 202, 107, 0.05) 50%, transparent 50%, transparent 75%, rgba(142, 202, 107, 0.05) 75%),
+      radial-gradient(circle at 50% 100%, rgba(39, 100, 50, 0.1) 0%, transparent 70%);
+    background-size: 40px 40px, 100% 100%;
+  }
+}
+
+@layer components {
+  /* Sports-themed gradients */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  }
+  
+  .gradient-card {
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, rgba(142, 202, 107, 0.05) 100%);
+  }
+
+  /* Spotlight effect */
+  .spotlight {
+    position: relative;
+  }
+  
+  .spotlight::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  /* Stadium entrance animation */
+  @keyframes stadium-entrance {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .stadium-entrance {
+    animation: stadium-entrance 0.6s ease-out;
+  }
+}
