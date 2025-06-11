@@ -1,5 +1,5 @@
 import { ethers } from 'ethers';
-import FanArenaABI from '../../artifacts/contracts/FanArena.sol/FanArena.json';
+import FanArenaABI from '@/../artifacts/contracts/FanArena.sol/FanArena.json';
 
 const CONTRACT_ADDRESS = "0x5FbDB2315678afecb367f032d93F642f64180aa3"; // Replace with your deployed contract address
 const CONTRACT_ABI = FanArenaABI.abi;
@@ -20,7 +20,7 @@ export interface Proposal {
 export const MOCK_PROPOSALS: Proposal[] = [
   {
     id: 0,
-    title: "Increase Community Fund Allocation for Marketing",
+    title: "Increase Community Fund allocation for Marketing",
     description: "This proposal aims to increase the budget for marketing campaigns to attract more users and partners to the Fan Arena platform. We believe a stronger marketing push will significantly grow our community and user base.",
     voteCountFor: 12500,
     voteCountAgainst: 3000,
