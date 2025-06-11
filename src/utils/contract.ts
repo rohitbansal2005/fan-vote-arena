@@ -1,8 +1,8 @@
 import { ethers } from 'ethers';
-import FanArenaABI from '@/../artifacts/contracts/FanArena.sol/FanArena.json';
+import { FanArenaABI } from './contractABI';
 
 const CONTRACT_ADDRESS = "0x5FbDB2315678afecb367f032d93F642f64180aa3"; // Replace with your deployed contract address
-const CONTRACT_ABI = FanArenaABI.abi;
+const CONTRACT_ABI = FanArenaABI;
 
 export interface Proposal {
   id: number;
